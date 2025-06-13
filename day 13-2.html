@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer Example</title>
+  <script>
+    let interval;
+
+    function startClock() {
+      interval = setInterval(() => {
+        const now = new Date();
+        document.getElementById("time").innerHTML = now.toString();
+      }, 1000);
+    }
+
+    function stopClock() {
+      clearInterval(interval);
+    }
+  </script>
+</head>
+<body onload="startClock()">
+  <div id="time"></div>
+  <br>
+  <button onclick="startClock()">Click me</button>
+  <button onclick="stopClock()">stop</button>
+</body>
+</html>
